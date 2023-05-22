@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/submit', function (Request $request) {
-    $email = $request->input('email');
-
-    return response()->json([
-        'success' => true,
-        'message' => 'Form submitted successfully.'
-    ]);
-});
+Route::get('/name', [WebController::class,'return_name']);
